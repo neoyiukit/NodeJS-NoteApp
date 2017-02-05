@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+<div class="container">
+<header class="jumbotron">
+    <div class="container">
+    <h1>Welcome to Neo's NoteSpace!</h1>
+    <p>To Store your Notes for Future References.</p>
+    <p>
+        <a class="btn btn-primary btn-large" href="/notes/new">Add New Notes</a>
+    </p>
+    </div>
+</header>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h3>Your Recent Notes</h3>
+    </div>
+</div>
+
+<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+    <% notes.forEach(function(note){ %>
+    <div class="col-md-3 col-sm-6">
+        <div class="thumbnail">
+            <img src="<%= note.image %>">
+            <div class="caption"><h4><%= note.Name %></h4></div>
+            <div class="">
+                    <p><%- note.desc %>...</p>
+            </div>
+            <p>
+                <a href="/notes/<%= note._id %>" class="btn btn-primary">More Details</a>
+            </p>
+        </div>
+    </div>
+    <% }); %>
+</div>
+</div>
+<% include ../partials/footer %>

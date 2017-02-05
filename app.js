@@ -19,6 +19,7 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
+// To refresh the database every time reboot the server
 seedDB();
 
 // passport configuration
